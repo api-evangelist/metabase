@@ -1,0 +1,34 @@
+aid: metabase
+name: Metabase
+description: >-
+  Metabase is an open source business intelligence and analytics tool that lets teams query data and build dashboards without SQL.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - API Analysis
+  - Business Intelligence
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/metabase/refs/heads/main/apis.yml
+created: '2026-03-26'
+modified: '2026-03-26'
+specificationVersion: '0.19'
+apis:
+  - aid: metabase:metabase
+    name: Metabase
+    description: >-
+      Metabase is an open source business intelligence and analytics tool that lets teams query data and build dashboards without SQL.
+    humanURL: https://www.metabase.com
+    tags:
+      - API Analysis
+      - Business Intelligence
+    properties:
+      - type: Documentation
+        url: https://www.metabase.com/docs
+      - type: GitHubOrg
+        url: https://github.com/metabase/metabase
+common:
+  - type: Website
+    url: https://www.metabase.com
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
