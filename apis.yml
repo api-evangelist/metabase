@@ -7,11 +7,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Business Intelligence
-  - Open Source
-  - Data Visualization
-  - Dashboards
   - Analytics
+  - Business Intelligence
+  - Dashboards
+  - Data Visualization
+  - Open Source
   - SQL
 url: >-
   https://raw.githubusercontent.com/api-evangelist/metabase/refs/heads/main/apis.yml
@@ -36,10 +36,10 @@ apis:
       - type: GitHubOrg
         url: https://github.com/metabase/metabase
     tags:
-      - Business Intelligence
-      - Open Source
-      - Dashboards
       - Analytics API
+      - Business Intelligence
+      - Dashboards
+      - Open Source
 common:
   - type: Website
     url: https://www.metabase.com
