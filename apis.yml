@@ -16,7 +16,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/metabase/refs/heads/main/apis.yml
 created: '2026-03-26'
-modified: '2026-03-26'
+modified: '2026-04-28'
 specificationVersion: '0.19'
 apis:
   - aid: metabase:metabase-api
@@ -35,6 +35,8 @@ apis:
         url: https://www.metabase.com/docs/latest/getting-started
       - type: GitHubOrg
         url: https://github.com/metabase/metabase
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/metabase/refs/heads/main/openapi/metabase-openapi.yml
     tags:
       - Analytics API
       - Business Intelligence
