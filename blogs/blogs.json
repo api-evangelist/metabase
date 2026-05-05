@@ -1,0 +1,13 @@
+{
+  "repo": "metabase",
+  "feeds": [
+    {
+      "source": "https://www.metabase.com/blog",
+      "feed_url": "https://www.metabase.com/feed.xml",
+      "saved": 10,
+      "title": "Metabase | Business Intelligence, Dashboards, and Data Visualization"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:31:11Z"
+}
