@@ -1,0 +1,770 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Metabase API
+  description: The Metabase API provides programmatic access to Metabase, an open source business intelligence and analytics
+    platform. It allows developers to manage dashboards, questions (cards), collections, databases, users, permissions, and
+    to execute queries against connected data sources.
+  tags:
+  - Metabase
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: metabase
+    baseUri: https://your-metabase-instance.com/api
+    description: Metabase API HTTP API.
+    authentication:
+      type: apikey
+      in: header
+      name: x-api-key
+      value: '{{METABASE_TOKEN}}'
+    resources:
+    - name: session
+      path: /session
+      operations:
+      - name: post-session
+        method: POST
+        description: Create a session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: delete-session
+        method: DELETE
+        description: Delete a session
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: collection
+      path: /collection
+      operations:
+      - name: get-collection
+        method: GET
+        description: List collections
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post-collection
+        method: POST
+        description: Create a collection
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: collection-id
+      path: /collection/{id}
+      operations:
+      - name: get-collection-id
+        method: GET
+        description: Get a collection
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: dashboard
+      path: /dashboard
+      operations:
+      - name: get-dashboard
+        method: GET
+        description: List dashboards
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post-dashboard
+        method: POST
+        description: Create a dashboard
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: dashboard-id
+      path: /dashboard/{id}
+      operations:
+      - name: get-dashboard-id
+        method: GET
+        description: Get a dashboard
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: put-dashboard-id
+        method: PUT
+        description: Update a dashboard
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: delete-dashboard-id
+        method: DELETE
+        description: Archive a dashboard
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: card
+      path: /card
+      operations:
+      - name: get-card
+        method: GET
+        description: List saved questions (cards)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post-card
+        method: POST
+        description: Create a card
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: card-id
+      path: /card/{id}
+      operations:
+      - name: get-card-id
+        method: GET
+        description: Get a card
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: card-id-query
+      path: /card/{id}/query
+      operations:
+      - name: post-card-id-query
+        method: POST
+        description: Execute a card's query
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: database
+      path: /database
+      operations:
+      - name: get-database
+        method: GET
+        description: List databases
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post-database
+        method: POST
+        description: Add a database connection
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: database-id
+      path: /database/{id}
+      operations:
+      - name: get-database-id
+        method: GET
+        description: Get a database
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: dataset
+      path: /dataset
+      operations:
+      - name: post-dataset
+        method: POST
+        description: Execute an ad-hoc query
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: search
+      path: /search
+      operations:
+      - name: get-search
+        method: GET
+        description: Search Metabase content
+        inputParameters:
+        - name: q
+          in: query
+          type: string
+          description: Search term.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: user
+      path: /user
+      operations:
+      - name: get-user
+        method: GET
+        description: List users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post-user
+        method: POST
+        description: Create a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: user-id
+      path: /user/{id}
+      operations:
+      - name: get-user-id
+        method: GET
+        description: Get a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: permissions-group
+      path: /permissions/group
+      operations:
+      - name: get-permissions-group
+        method: GET
+        description: List permission groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: setting
+      path: /setting
+      operations:
+      - name: get-setting
+        method: GET
+        description: List settings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: metabase-rest
+    description: REST adapter for Metabase API.
+    resources:
+    - path: /session
+      name: post-session
+      operations:
+      - method: POST
+        name: post-session
+        description: Create a session
+        call: metabase.post-session
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /session
+      name: delete-session
+      operations:
+      - method: DELETE
+        name: delete-session
+        description: Delete a session
+        call: metabase.delete-session
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /collection
+      name: get-collection
+      operations:
+      - method: GET
+        name: get-collection
+        description: List collections
+        call: metabase.get-collection
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /collection
+      name: post-collection
+      operations:
+      - method: POST
+        name: post-collection
+        description: Create a collection
+        call: metabase.post-collection
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /collection/{id}
+      name: get-collection-id
+      operations:
+      - method: GET
+        name: get-collection-id
+        description: Get a collection
+        call: metabase.get-collection-id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /dashboard
+      name: get-dashboard
+      operations:
+      - method: GET
+        name: get-dashboard
+        description: List dashboards
+        call: metabase.get-dashboard
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /dashboard
+      name: post-dashboard
+      operations:
+      - method: POST
+        name: post-dashboard
+        description: Create a dashboard
+        call: metabase.post-dashboard
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /dashboard/{id}
+      name: get-dashboard-id
+      operations:
+      - method: GET
+        name: get-dashboard-id
+        description: Get a dashboard
+        call: metabase.get-dashboard-id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /dashboard/{id}
+      name: put-dashboard-id
+      operations:
+      - method: PUT
+        name: put-dashboard-id
+        description: Update a dashboard
+        call: metabase.put-dashboard-id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /dashboard/{id}
+      name: delete-dashboard-id
+      operations:
+      - method: DELETE
+        name: delete-dashboard-id
+        description: Archive a dashboard
+        call: metabase.delete-dashboard-id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /card
+      name: get-card
+      operations:
+      - method: GET
+        name: get-card
+        description: List saved questions (cards)
+        call: metabase.get-card
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /card
+      name: post-card
+      operations:
+      - method: POST
+        name: post-card
+        description: Create a card
+        call: metabase.post-card
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /card/{id}
+      name: get-card-id
+      operations:
+      - method: GET
+        name: get-card-id
+        description: Get a card
+        call: metabase.get-card-id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /card/{id}/query
+      name: post-card-id-query
+      operations:
+      - method: POST
+        name: post-card-id-query
+        description: Execute a card's query
+        call: metabase.post-card-id-query
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /database
+      name: get-database
+      operations:
+      - method: GET
+        name: get-database
+        description: List databases
+        call: metabase.get-database
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /database
+      name: post-database
+      operations:
+      - method: POST
+        name: post-database
+        description: Add a database connection
+        call: metabase.post-database
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /database/{id}
+      name: get-database-id
+      operations:
+      - method: GET
+        name: get-database-id
+        description: Get a database
+        call: metabase.get-database-id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /dataset
+      name: post-dataset
+      operations:
+      - method: POST
+        name: post-dataset
+        description: Execute an ad-hoc query
+        call: metabase.post-dataset
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /search
+      name: get-search
+      operations:
+      - method: GET
+        name: get-search
+        description: Search Metabase content
+        call: metabase.get-search
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /user
+      name: get-user
+      operations:
+      - method: GET
+        name: get-user
+        description: List users
+        call: metabase.get-user
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /user
+      name: post-user
+      operations:
+      - method: POST
+        name: post-user
+        description: Create a user
+        call: metabase.post-user
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /user/{id}
+      name: get-user-id
+      operations:
+      - method: GET
+        name: get-user-id
+        description: Get a user
+        call: metabase.get-user-id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /permissions/group
+      name: get-permissions-group
+      operations:
+      - method: GET
+        name: get-permissions-group
+        description: List permission groups
+        call: metabase.get-permissions-group
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /setting
+      name: get-setting
+      operations:
+      - method: GET
+        name: get-setting
+        description: List settings
+        call: metabase.get-setting
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: metabase-mcp
+    transport: http
+    description: MCP adapter for Metabase API for AI agent use.
+    tools:
+    - name: post-session
+      description: Create a session
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: metabase.post-session
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-session
+      description: Delete a session
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: metabase.delete-session
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-collection
+      description: List collections
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-collection
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-collection
+      description: Create a collection
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: metabase.post-collection
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-collection-id
+      description: Get a collection
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-collection-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-dashboard
+      description: List dashboards
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-dashboard
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-dashboard
+      description: Create a dashboard
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: metabase.post-dashboard
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-dashboard-id
+      description: Get a dashboard
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-dashboard-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: put-dashboard-id
+      description: Update a dashboard
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: metabase.put-dashboard-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-dashboard-id
+      description: Archive a dashboard
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: metabase.delete-dashboard-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-card
+      description: List saved questions (cards)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-card
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-card
+      description: Create a card
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: metabase.post-card
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-card-id
+      description: Get a card
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-card-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-card-id-query
+      description: Execute a card's query
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: metabase.post-card-id-query
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-database
+      description: List databases
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-database
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-database
+      description: Add a database connection
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: metabase.post-database
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-database-id
+      description: Get a database
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-database-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-dataset
+      description: Execute an ad-hoc query
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: metabase.post-dataset
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-search
+      description: Search Metabase content
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-search
+      with:
+        q: tools.q
+      inputParameters:
+      - name: q
+        type: string
+        description: Search term.
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-user
+      description: List users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-user
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: post-user
+      description: Create a user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: metabase.post-user
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-user-id
+      description: Get a user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-user-id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-permissions-group
+      description: List permission groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-permissions-group
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-setting
+      description: List settings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase.get-setting
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    METABASE_TOKEN: METABASE_TOKEN
