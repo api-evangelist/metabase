@@ -63,6 +63,11 @@ common:
     url: https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase
   - type: Community
     url: https://discourse.metabase.com
+  - type: Integrations
+    url: https://www.metabase.com/partners/
+integrations:
+  - name: Become a partner
+  - name: Connect me with an Expert
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
