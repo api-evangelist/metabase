@@ -55,7 +55,7 @@ common:
     url: https://github.com/metabase/metabase
   - type: Login
     url: https://store.metabase.com/login
-  - type: Signup
+  - type: SignUp
     url: https://www.metabase.com/start
   - type: Support
     url: https://www.metabase.com/help
