@@ -1,0 +1,171 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Metabase API — Cards
+  description: 'Metabase API — Cards. 4 operations. Lead operation: List saved questions (cards). Self-contained Naftiko capability
+    covering one Metabase business surface.'
+  tags:
+  - Metabase
+  - Cards
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    METABASE_API_KEY: METABASE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: metabase-cards
+    baseUri: https://your-metabase-instance.com/api
+    description: Metabase API — Cards business capability. Self-contained, no shared references.
+    resources:
+    - name: card
+      path: /card
+      operations:
+      - name: get
+        method: GET
+        description: List saved questions (cards)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: Create a card
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: card-id
+      path: /card/{id}
+      operations:
+      - name: get
+        method: GET
+        description: Get a card
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: card-id-query
+      path: /card/{id}/query
+      operations:
+      - name: post
+        method: POST
+        description: Execute a card's query
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: x-api-key
+      value: '{{env.METABASE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: metabase-cards-rest
+    port: 8080
+    description: REST adapter for Metabase API — Cards. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/card
+      name: card
+      description: REST surface for card.
+      operations:
+      - method: GET
+        name: get
+        description: List saved questions (cards)
+        call: metabase-cards.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: Create a card
+        call: metabase-cards.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/card/{id}
+      name: card-id
+      description: REST surface for card-id.
+      operations:
+      - method: GET
+        name: get
+        description: Get a card
+        call: metabase-cards.get
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/card/{id}/query
+      name: card-id-query
+      description: REST surface for card-id-query.
+      operations:
+      - method: POST
+        name: post
+        description: Execute a card's query
+        call: metabase-cards.post
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: metabase-cards-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Metabase API — Cards. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-saved-questions-cards
+      description: List saved questions (cards)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase-cards.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-card
+      description: Create a card
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: metabase-cards.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-card
+      description: Get a card
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase-cards.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: execute-card-s-query
+      description: Execute a card's query
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: metabase-cards.post
+      outputParameters:
+      - type: object
+        mapping: $.

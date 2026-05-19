@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Metabase API — Settings
+  description: 'Metabase API — Settings. 1 operations. Lead operation: List settings. Self-contained Naftiko capability covering
+    one Metabase business surface.'
+  tags:
+  - Metabase
+  - Settings
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    METABASE_API_KEY: METABASE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: metabase-settings
+    baseUri: https://your-metabase-instance.com/api
+    description: Metabase API — Settings business capability. Self-contained, no shared references.
+    resources:
+    - name: setting
+      path: /setting
+      operations:
+      - name: get
+        method: GET
+        description: List settings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: x-api-key
+      value: '{{env.METABASE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: metabase-settings-rest
+    port: 8080
+    description: REST adapter for Metabase API — Settings. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/setting
+      name: setting
+      description: REST surface for setting.
+      operations:
+      - method: GET
+        name: get
+        description: List settings
+        call: metabase-settings.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: metabase-settings-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Metabase API — Settings. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-settings
+      description: List settings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: metabase-settings.get
+      outputParameters:
+      - type: object
+        mapping: $.
