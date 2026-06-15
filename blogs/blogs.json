@@ -5,6 +5,13 @@
       "source": "https://www.metabase.com/feed",
       "feed_url": "https://www.metabase.com/feed",
       "title": "",
+      "saved": 2,
+      "method": "feed"
+    },
+    {
+      "source": "https://www.metabase.com/feed.xml",
+      "feed_url": "https://www.metabase.com/feed.xml",
+      "title": "",
       "saved": 0,
       "method": "feed"
     },
@@ -16,6 +23,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 16,
-  "fetched": "2026-06-01T23:35:02Z"
+  "post_count": 19,
+  "fetched": "2026-06-14T20:42:17Z"
 }
