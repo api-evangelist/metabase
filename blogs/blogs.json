@@ -2,18 +2,11 @@
   "repo": "metabase",
   "feeds": [
     {
-      "source": "https://www.metabase.com/feed",
-      "feed_url": "https://www.metabase.com/feed",
-      "title": "",
-      "saved": 2,
-      "method": "feed"
-    },
-    {
-      "source": "https://www.metabase.com/feed.xml",
+      "source": "https://www.metabase.com/blog",
       "feed_url": "https://www.metabase.com/feed.xml",
       "title": "",
       "saved": 0,
-      "method": "feed"
+      "method": "discovered"
     },
     {
       "source": "https://www.metabase.com/docs/latest",
@@ -23,6 +16,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 19,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 20,
+  "fetched": "2026-06-27T12:03:07Z"
 }
