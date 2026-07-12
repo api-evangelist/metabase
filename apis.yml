@@ -40,6 +40,12 @@ apis:
       - Dashboards
       - Open Source
 common:
+  - type: TrustCenter
+    url: security/metabase-trust-center.yml
+  - type: DomainSecurity
+    url: security/metabase-domain-security.yml
+  - type: Authentication
+    url: authentication/metabase-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/metabase
   - type: Website

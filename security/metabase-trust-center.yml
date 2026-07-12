@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://www.metabase.com/security/
+url: https://www.metabase.com/security/
+certifications:
+- SOC 2
+- GDPR
+evidence:
+- source: https://www.metabase.com/security/
+  keywords:
+  - soc 2
+  - gdpr
