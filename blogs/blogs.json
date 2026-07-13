@@ -2,11 +2,11 @@
   "repo": "metabase",
   "feeds": [
     {
-      "source": "https://www.metabase.com/blog",
+      "source": "https://www.metabase.com/feed.xml",
       "feed_url": "https://www.metabase.com/feed.xml",
       "title": "",
       "saved": 0,
-      "method": "discovered"
+      "method": "feed"
     },
     {
       "source": "https://www.metabase.com/docs/latest",
@@ -16,6 +16,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 20,
-  "fetched": "2026-06-27T12:03:07Z"
+  "post_count": 21,
+  "fetched": "2026-07-11T11:50:51Z"
 }
