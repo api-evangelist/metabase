@@ -40,6 +40,8 @@ apis:
       - Dashboards
       - Open Source
 common:
+  - type: AgenticAccess
+    url: agentic-access/metabase-agentic-access.yml
   - type: TrustCenter
     url: security/metabase-trust-center.yml
   - type: DomainSecurity
