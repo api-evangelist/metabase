@@ -1,0 +1,131 @@
+openapi: 3.0.3
+info:
+  title: Metabase Cards API
+  description: The Metabase API provides programmatic access to Metabase, an open source business intelligence and analytics platform. It allows developers to manage dashboards, questions (cards), collections, databases, users, permissions, and to execute queries against connected data sources.
+  version: '1.0'
+  contact:
+    name: Metabase
+    url: https://www.metabase.com
+  license:
+    name: AGPL-3.0
+    url: https://www.gnu.org/licenses/agpl-3.0.html
+servers:
+- url: https://your-metabase-instance.com/api
+  description: Self-hosted or cloud Metabase instance
+security:
+- ApiKeyAuth: []
+- SessionAuth: []
+tags:
+- name: Cards
+  description: Saved questions used to power dashboards and embedded analytics.
+paths:
+  /card:
+    get:
+      tags:
+      - Cards
+      summary: List saved questions (cards)
+      responses:
+        '200':
+          description: A list of cards.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Card'
+    post:
+      tags:
+      - Cards
+      summary: Create a card
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CardInput'
+      responses:
+        '200':
+          description: Card created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Card'
+  /card/{id}:
+    get:
+      tags:
+      - Cards
+      summary: Get a card
+      parameters:
+      - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: A card.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Card'
+  /card/{id}/query:
+    post:
+      tags:
+      - Cards
+      summary: Execute a card's query
+      parameters:
+      - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: Query result.
+components:
+  parameters:
+    IdParam:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: integer
+  schemas:
+    CardInput:
+      type: object
+      required:
+      - name
+      - dataset_query
+      - display
+      - visualization_settings
+      properties:
+        name:
+          type: string
+        dataset_query:
+          type: object
+        display:
+          type: string
+        visualization_settings:
+          type: object
+        collection_id:
+          type: integer
+          nullable: true
+    Card:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        database_id:
+          type: integer
+        collection_id:
+          type: integer
+          nullable: true
+        dataset_query:
+          type: object
+        display:
+          type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+    SessionAuth:
+      type: apiKey
+      in: header
+      name: X-Metabase-Session

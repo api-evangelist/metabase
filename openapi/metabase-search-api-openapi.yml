@@ -1,0 +1,45 @@
+openapi: 3.0.3
+info:
+  title: Metabase Cards Search API
+  description: The Metabase API provides programmatic access to Metabase, an open source business intelligence and analytics platform. It allows developers to manage dashboards, questions (cards), collections, databases, users, permissions, and to execute queries against connected data sources.
+  version: '1.0'
+  contact:
+    name: Metabase
+    url: https://www.metabase.com
+  license:
+    name: AGPL-3.0
+    url: https://www.gnu.org/licenses/agpl-3.0.html
+servers:
+- url: https://your-metabase-instance.com/api
+  description: Self-hosted or cloud Metabase instance
+security:
+- ApiKeyAuth: []
+- SessionAuth: []
+tags:
+- name: Search
+  description: Search across cards, dashboards, collections, and more.
+paths:
+  /search:
+    get:
+      tags:
+      - Search
+      summary: Search Metabase content
+      parameters:
+      - in: query
+        name: q
+        schema:
+          type: string
+        description: Search term.
+      responses:
+        '200':
+          description: Search results.
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+    SessionAuth:
+      type: apiKey
+      in: header
+      name: X-Metabase-Session

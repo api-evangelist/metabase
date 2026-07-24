@@ -1,0 +1,73 @@
+openapi: 3.0.3
+info:
+  title: Metabase Cards Sessions API
+  description: The Metabase API provides programmatic access to Metabase, an open source business intelligence and analytics platform. It allows developers to manage dashboards, questions (cards), collections, databases, users, permissions, and to execute queries against connected data sources.
+  version: '1.0'
+  contact:
+    name: Metabase
+    url: https://www.metabase.com
+  license:
+    name: AGPL-3.0
+    url: https://www.gnu.org/licenses/agpl-3.0.html
+servers:
+- url: https://your-metabase-instance.com/api
+  description: Self-hosted or cloud Metabase instance
+security:
+- ApiKeyAuth: []
+- SessionAuth: []
+tags:
+- name: Sessions
+  description: Authentication and session management.
+paths:
+  /session:
+    post:
+      tags:
+      - Sessions
+      summary: Create a session
+      description: Authenticate using username and password to obtain a session ID.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - username
+              - password
+              properties:
+                username:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+      responses:
+        '200':
+          description: Session created.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+        '400':
+          description: Invalid credentials.
+    delete:
+      tags:
+      - Sessions
+      summary: Delete a session
+      description: Sign out the current session.
+      responses:
+        '204':
+          description: Session deleted.
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+    SessionAuth:
+      type: apiKey
+      in: header
+      name: X-Metabase-Session

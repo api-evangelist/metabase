@@ -1,0 +1,140 @@
+openapi: 3.0.3
+info:
+  title: Metabase Cards Dashboards API
+  description: The Metabase API provides programmatic access to Metabase, an open source business intelligence and analytics platform. It allows developers to manage dashboards, questions (cards), collections, databases, users, permissions, and to execute queries against connected data sources.
+  version: '1.0'
+  contact:
+    name: Metabase
+    url: https://www.metabase.com
+  license:
+    name: AGPL-3.0
+    url: https://www.gnu.org/licenses/agpl-3.0.html
+servers:
+- url: https://your-metabase-instance.com/api
+  description: Self-hosted or cloud Metabase instance
+security:
+- ApiKeyAuth: []
+- SessionAuth: []
+tags:
+- name: Dashboards
+  description: Build and manage interactive dashboards.
+paths:
+  /dashboard:
+    get:
+      tags:
+      - Dashboards
+      summary: List dashboards
+      responses:
+        '200':
+          description: A list of dashboards.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Dashboard'
+    post:
+      tags:
+      - Dashboards
+      summary: Create a dashboard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DashboardInput'
+      responses:
+        '200':
+          description: Dashboard created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dashboard'
+  /dashboard/{id}:
+    get:
+      tags:
+      - Dashboards
+      summary: Get a dashboard
+      parameters:
+      - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: A dashboard.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dashboard'
+    put:
+      tags:
+      - Dashboards
+      summary: Update a dashboard
+      parameters:
+      - $ref: '#/components/parameters/IdParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DashboardInput'
+      responses:
+        '200':
+          description: Dashboard updated.
+    delete:
+      tags:
+      - Dashboards
+      summary: Archive a dashboard
+      parameters:
+      - $ref: '#/components/parameters/IdParam'
+      responses:
+        '204':
+          description: Dashboard archived.
+components:
+  schemas:
+    DashboardInput:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        collection_id:
+          type: integer
+          nullable: true
+    Dashboard:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        collection_id:
+          type: integer
+          nullable: true
+        creator_id:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+  parameters:
+    IdParam:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: integer
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+    SessionAuth:
+      type: apiKey
+      in: header
+      name: X-Metabase-Session

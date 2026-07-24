@@ -1,0 +1,114 @@
+openapi: 3.0.3
+info:
+  title: Metabase Cards Databases API
+  description: The Metabase API provides programmatic access to Metabase, an open source business intelligence and analytics platform. It allows developers to manage dashboards, questions (cards), collections, databases, users, permissions, and to execute queries against connected data sources.
+  version: '1.0'
+  contact:
+    name: Metabase
+    url: https://www.metabase.com
+  license:
+    name: AGPL-3.0
+    url: https://www.gnu.org/licenses/agpl-3.0.html
+servers:
+- url: https://your-metabase-instance.com/api
+  description: Self-hosted or cloud Metabase instance
+security:
+- ApiKeyAuth: []
+- SessionAuth: []
+tags:
+- name: Databases
+  description: Manage data source connections and metadata.
+paths:
+  /database:
+    get:
+      tags:
+      - Databases
+      summary: List databases
+      responses:
+        '200':
+          description: A list of databases.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Database'
+    post:
+      tags:
+      - Databases
+      summary: Add a database connection
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DatabaseInput'
+      responses:
+        '200':
+          description: Database added.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Database'
+  /database/{id}:
+    get:
+      tags:
+      - Databases
+      summary: Get a database
+      parameters:
+      - $ref: '#/components/parameters/IdParam'
+      responses:
+        '200':
+          description: A database.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Database'
+components:
+  parameters:
+    IdParam:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: integer
+  schemas:
+    DatabaseInput:
+      type: object
+      required:
+      - name
+      - engine
+      - details
+      properties:
+        name:
+          type: string
+        engine:
+          type: string
+          example: postgres
+        details:
+          type: object
+    Database:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        engine:
+          type: string
+        details:
+          type: object
+        is_sample:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+    SessionAuth:
+      type: apiKey
+      in: header
+      name: X-Metabase-Session
