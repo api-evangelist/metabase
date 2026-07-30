@@ -4,7 +4,20 @@ description: >-
   Metabase is an open source business intelligence and analytics platform that enables teams to explore data, build
   interactive dashboards, and ask questions about their data without writing SQL.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/metabase.png
 tags:
   - Analytics
   - Business Intelligence
@@ -17,28 +30,176 @@ created: '2026-03-26'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: metabase:metabase-api
-    name: Metabase API
-    description: >-
-      The Metabase API provides programmatic access to dashboards, questions, databases, collections, and user
-      management, enabling developers to embed analytics, automate queries, and integrate Metabase into applications.
-    humanURL: https://www.metabase.com
-    properties:
-      - type: Documentation
-        url: https://www.metabase.com/docs/latest
-      - type: APIDocumentation
-        url: https://www.metabase.com/docs/latest/api-documentation
-      - type: GettingStarted
-        url: https://www.metabase.com/docs/latest/getting-started
-      - type: GitHubOrg
-        url: https://github.com/metabase/metabase
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/metabase/refs/heads/main/openapi/metabase-openapi.yml
-    tags:
-      - Analytics API
-      - Business Intelligence
-      - Dashboards
-      - Open Source
+- aid: metabase:metabase-cards-api
+  name: Metabase Cards API
+  description: Saved questions used to power dashboards and embedded analytics.
+  humanURL: https://www.metabase.com
+  tags:
+  - Cards
+  properties:
+  - type: OpenAPI
+    url: openapi/metabase-cards-api-openapi.yml
+  - type: Documentation
+    url: https://www.metabase.com/docs/latest
+  - type: APIDocumentation
+    url: https://www.metabase.com/docs/latest/api-documentation
+  - type: GettingStarted
+    url: https://www.metabase.com/docs/latest/getting-started
+  - type: GitHubOrg
+    url: https://github.com/metabase/metabase
+- aid: metabase:metabase-collections-api
+  name: Metabase Collections API
+  description: Organize dashboards, questions, and pulses.
+  humanURL: https://www.metabase.com
+  tags:
+  - Collections
+  properties:
+  - type: OpenAPI
+    url: openapi/metabase-collections-api-openapi.yml
+  - type: Documentation
+    url: https://www.metabase.com/docs/latest
+  - type: APIDocumentation
+    url: https://www.metabase.com/docs/latest/api-documentation
+  - type: GettingStarted
+    url: https://www.metabase.com/docs/latest/getting-started
+  - type: GitHubOrg
+    url: https://github.com/metabase/metabase
+- aid: metabase:metabase-dashboards-api
+  name: Metabase Dashboards API
+  description: Build and manage interactive dashboards.
+  humanURL: https://www.metabase.com
+  tags:
+  - Dashboards
+  properties:
+  - type: OpenAPI
+    url: openapi/metabase-dashboards-api-openapi.yml
+  - type: Documentation
+    url: https://www.metabase.com/docs/latest
+  - type: APIDocumentation
+    url: https://www.metabase.com/docs/latest/api-documentation
+  - type: GettingStarted
+    url: https://www.metabase.com/docs/latest/getting-started
+  - type: GitHubOrg
+    url: https://github.com/metabase/metabase
+- aid: metabase:metabase-databases-api
+  name: Metabase Databases API
+  description: Manage data source connections and metadata.
+  humanURL: https://www.metabase.com
+  tags:
+  - Databases
+  properties:
+  - type: OpenAPI
+    url: openapi/metabase-databases-api-openapi.yml
+  - type: Documentation
+    url: https://www.metabase.com/docs/latest
+  - type: APIDocumentation
+    url: https://www.metabase.com/docs/latest/api-documentation
+  - type: GettingStarted
+    url: https://www.metabase.com/docs/latest/getting-started
+  - type: GitHubOrg
+    url: https://github.com/metabase/metabase
+- aid: metabase:metabase-datasets-api
+  name: Metabase Datasets API
+  description: Execute ad-hoc queries against connected databases.
+  humanURL: https://www.metabase.com
+  tags:
+  - Datasets
+  properties:
+  - type: OpenAPI
+    url: openapi/metabase-datasets-api-openapi.yml
+  - type: Documentation
+    url: https://www.metabase.com/docs/latest
+  - type: APIDocumentation
+    url: https://www.metabase.com/docs/latest/api-documentation
+  - type: GettingStarted
+    url: https://www.metabase.com/docs/latest/getting-started
+  - type: GitHubOrg
+    url: https://github.com/metabase/metabase
+- aid: metabase:metabase-permissions-api
+  name: Metabase Permissions API
+  description: Group and permission management.
+  humanURL: https://www.metabase.com
+  tags:
+  - Permissions
+  properties:
+  - type: OpenAPI
+    url: openapi/metabase-permissions-api-openapi.yml
+  - type: Documentation
+    url: https://www.metabase.com/docs/latest
+  - type: APIDocumentation
+    url: https://www.metabase.com/docs/latest/api-documentation
+  - type: GettingStarted
+    url: https://www.metabase.com/docs/latest/getting-started
+  - type: GitHubOrg
+    url: https://github.com/metabase/metabase
+- aid: metabase:metabase-search-api
+  name: Metabase Search API
+  description: Search across cards, dashboards, collections, and more.
+  humanURL: https://www.metabase.com
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/metabase-search-api-openapi.yml
+  - type: Documentation
+    url: https://www.metabase.com/docs/latest
+  - type: APIDocumentation
+    url: https://www.metabase.com/docs/latest/api-documentation
+  - type: GettingStarted
+    url: https://www.metabase.com/docs/latest/getting-started
+  - type: GitHubOrg
+    url: https://github.com/metabase/metabase
+- aid: metabase:metabase-sessions-api
+  name: Metabase Sessions API
+  description: Authentication and session management.
+  humanURL: https://www.metabase.com
+  tags:
+  - Sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/metabase-sessions-api-openapi.yml
+  - type: Documentation
+    url: https://www.metabase.com/docs/latest
+  - type: APIDocumentation
+    url: https://www.metabase.com/docs/latest/api-documentation
+  - type: GettingStarted
+    url: https://www.metabase.com/docs/latest/getting-started
+  - type: GitHubOrg
+    url: https://github.com/metabase/metabase
+- aid: metabase:metabase-settings-api
+  name: Metabase Settings API
+  description: Global application settings.
+  humanURL: https://www.metabase.com
+  tags:
+  - Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/metabase-settings-api-openapi.yml
+  - type: Documentation
+    url: https://www.metabase.com/docs/latest
+  - type: APIDocumentation
+    url: https://www.metabase.com/docs/latest/api-documentation
+  - type: GettingStarted
+    url: https://www.metabase.com/docs/latest/getting-started
+  - type: GitHubOrg
+    url: https://github.com/metabase/metabase
+- aid: metabase:metabase-users-api
+  name: Metabase Users API
+  description: User account management.
+  humanURL: https://www.metabase.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/metabase-users-api-openapi.yml
+  - type: Documentation
+    url: https://www.metabase.com/docs/latest
+  - type: APIDocumentation
+    url: https://www.metabase.com/docs/latest/api-documentation
+  - type: GettingStarted
+    url: https://www.metabase.com/docs/latest/getting-started
+  - type: GitHubOrg
+    url: https://github.com/metabase/metabase
 common:
   - type: AgenticAccess
     url: agentic-access/metabase-agentic-access.yml
