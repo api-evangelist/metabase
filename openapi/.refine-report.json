@@ -1,0 +1,32 @@
+{
+  "provider": "metabase",
+  "sources": [
+    "metabase-cards-api-openapi.yml",
+    "metabase-collections-api-openapi.yml",
+    "metabase-dashboards-api-openapi.yml",
+    "metabase-databases-api-openapi.yml",
+    "metabase-datasets-api-openapi.yml",
+    "metabase-permissions-api-openapi.yml",
+    "metabase-search-api-openapi.yml",
+    "metabase-sessions-api-openapi.yml",
+    "metabase-settings-api-openapi.yml",
+    "metabase-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "metabase-cards-api-openapi.yml",
+    "metabase-collections-api-openapi.yml",
+    "metabase-dashboards-api-openapi.yml",
+    "metabase-databases-api-openapi.yml",
+    "metabase-datasets-api-openapi.yml",
+    "metabase-permissions-api-openapi.yml",
+    "metabase-search-api-openapi.yml",
+    "metabase-sessions-api-openapi.yml",
+    "metabase-settings-api-openapi.yml",
+    "metabase-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
