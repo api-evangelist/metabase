@@ -1,0 +1,114 @@
+{
+  "item": [
+    {
+      "id": "d89e756e-ef38-4ded-88f2-45684c0e4361",
+      "name": "Settings",
+      "description": {
+        "content": "Global application settings.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a21fbc96-f1fa-4879-82f3-3a5a6a1a9c24",
+          "name": "List settings",
+          "request": {
+            "name": "List settings",
+            "description": {},
+            "url": {
+              "path": [
+                "setting"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a6baa4e9-3b5b-45b3-b96d-c074173a4420",
+              "name": "A list of settings.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "setting"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://your-metabase-instance.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a9e6f48b-76f5-4af3-9e18-04153962eb40",
+    "name": "Metabase Cards Settings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Metabase API provides programmatic access to Metabase, an open source business intelligence and analytics platform. It allows developers to manage dashboards, questions (cards), collections, databases, users, permissions, and to execute queries against connected data sources.\n\nContact Support:\n Name: Metabase",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "item": [
+    {
+      "id": "a2f432dd-ea73-40d0-9817-6a36cd54c953",
+      "name": "Databases",
+      "description": {
+        "content": "Manage data source connections and metadata.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e18f214b-582f-443a-8e7e-a8f0c39329f5",
+          "name": "List databases",
+          "request": {
+            "name": "List databases",
+            "description": {},
+            "url": {
+              "path": [
+                "database"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec7835fc-8c1f-4f1d-9987-ea41c27103a1",
+              "name": "A list of databases.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "database"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3357,\n    \"name\": \"string\",\n    \"engine\": \"string\",\n    \"details\": {},\n    \"is_sample\": false,\n    \"created_at\": \"2009-05-30T10:21:00.236Z\"\n  },\n  {\n    \"id\": 2438,\n    \"name\": \"string\",\n    \"engine\": \"string\",\n    \"details\": {},\n    \"is_sample\": true,\n    \"created_at\": \"1967-11-08T11:18:46.383Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3358dac-d4a5-44de-a6f8-3441aa9c68a5",
+          "name": "Add a database connection",
+          "request": {
+            "name": "Add a database connection",
+            "description": {},
+            "url": {
+              "path": [
+                "database"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"engine\": \"<string>\",\n  \"details\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "381aeea5-393b-4ec8-9716-6e615aec0056",
+              "name": "Database added.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "database"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"engine\": \"postgres\",\n  \"details\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2241,\n  \"name\": \"string\",\n  \"engine\": \"string\",\n  \"details\": {},\n  \"is_sample\": true,\n  \"created_at\": \"2006-07-12T11:13:56.119Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a046452-5362-4819-a27b-552a1b408b2e",
+          "name": "Get a database",
+          "request": {
+            "name": "Get a database",
+            "description": {},
+            "url": {
+              "path": [
+                "database",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d904567a-47b1-4a5d-8ee7-186c45030537",
+              "name": "A database.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "database",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2241,\n  \"name\": \"string\",\n  \"engine\": \"string\",\n  \"details\": {},\n  \"is_sample\": true,\n  \"created_at\": \"2006-07-12T11:13:56.119Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://your-metabase-instance.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bb236894-0dd4-4743-a88b-1128ab04f251",
+    "name": "Metabase Cards Databases API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Metabase API provides programmatic access to Metabase, an open source business intelligence and analytics platform. It allows developers to manage dashboards, questions (cards), collections, databases, users, permissions, and to execute queries against connected data sources.\n\nContact Support:\n Name: Metabase",
+      "type": "text/plain"
+    }
+  }
+}

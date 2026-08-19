@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "d286e867-b29b-440b-a08f-357439fac757",
+      "name": "Datasets",
+      "description": {
+        "content": "Execute ad-hoc queries against connected databases.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f3b927b2-1a2a-4e81-9a05-7cff78c663cb",
+          "name": "Execute an ad-hoc query",
+          "request": {
+            "name": "Execute an ad-hoc query",
+            "description": {},
+            "url": {
+              "path": [
+                "dataset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"database\": \"<integer>\",\n  \"type\": \"<string>\",\n  \"native\": {\n    \"query\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "239a8144-a55a-4d74-8eb1-14c4d40c6d65",
+              "name": "Query result.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"database\": \"<integer>\",\n  \"type\": \"<string>\",\n  \"native\": {\n    \"query\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://your-metabase-instance.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "14c88fa9-8f19-449b-b379-484a323f9769",
+    "name": "Metabase Cards Datasets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Metabase API provides programmatic access to Metabase, an open source business intelligence and analytics platform. It allows developers to manage dashboards, questions (cards), collections, databases, users, permissions, and to execute queries against connected data sources.\n\nContact Support:\n Name: Metabase",
+      "type": "text/plain"
+    }
+  }
+}

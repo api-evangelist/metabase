@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Metabase Cards API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List saved questions (cards)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://your-metabase-instance.com/api/card"
+          },
+          "docs": "List saved questions (cards)"
+        },
+        {
+          "info": {
+            "name": "Create a card",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://your-metabase-instance.com/api/card",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a card"
+        },
+        {
+          "info": {
+            "name": "Get a card",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://your-metabase-instance.com/api/card/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a card"
+        },
+        {
+          "info": {
+            "name": "Execute a card's query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://your-metabase-instance.com/api/card/:id/query",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Execute a card's query"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

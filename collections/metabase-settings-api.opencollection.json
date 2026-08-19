@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Metabase Cards Settings API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Settings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://your-metabase-instance.com/api/setting"
+          },
+          "docs": "List settings"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
