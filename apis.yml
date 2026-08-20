@@ -23,6 +23,13 @@ tags:
   - Business Intelligence
   - Dashboards
   - Data Visualization
+  - Open-Source
+  - SQL
+tags_raw:
+  - Analytics
+  - Business Intelligence
+  - Dashboards
+  - Data Visualization
   - Open Source
   - SQL
 url: https://raw.githubusercontent.com/api-evangelist/metabase/refs/heads/main/apis.yml
@@ -52,6 +59,8 @@ apis:
   description: Organize dashboards, questions, and pulses.
   humanURL: https://www.metabase.com
   tags:
+  - Collection
+  tags_raw:
   - Collections
   properties:
   - type: OpenAPI
@@ -188,6 +197,8 @@ apis:
   description: User account management.
   humanURL: https://www.metabase.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
