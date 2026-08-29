@@ -4,6 +4,18 @@ description: >-
   Metabase is an open source business intelligence and analytics platform that enables teams to explore data, build
   interactive dashboards, and ask questions about their data without writing SQL.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
