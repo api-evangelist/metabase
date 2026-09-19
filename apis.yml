@@ -32,6 +32,7 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/metabase.png
 tags:
+  - Metabase
   - Analytics
   - Business Intelligence
   - Dashboards
