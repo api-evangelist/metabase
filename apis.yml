@@ -38,8 +38,8 @@ tags:
   - Data Visualization
   - Open-Source
   - SQL
-  - Metabase
 tags_raw:
+  - Metabase
   - Analytics
   - Business Intelligence
   - Dashboards
@@ -109,6 +109,8 @@ apis:
   description: Manage data source connections and metadata.
   humanURL: https://www.metabase.com
   tags:
+  - Database
+  tags_raw:
   - Databases
   properties:
   - type: OpenAPI
