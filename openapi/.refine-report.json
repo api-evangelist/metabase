@@ -1,16 +1,7 @@
 {
   "provider": "metabase",
   "sources": [
-    "metabase-cards-api-openapi.yml",
-    "metabase-collections-api-openapi.yml",
-    "metabase-dashboards-api-openapi.yml",
-    "metabase-databases-api-openapi.yml",
-    "metabase-datasets-api-openapi.yml",
-    "metabase-permissions-api-openapi.yml",
-    "metabase-search-api-openapi.yml",
-    "metabase-sessions-api-openapi.yml",
-    "metabase-settings-api-openapi.yml",
-    "metabase-users-api-openapi.yml"
+    "_original/metabase-openapi.yml"
   ],
   "outputs": [
     "metabase-cards-api-openapi.yml",
@@ -27,6 +18,21 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "metabase-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "metabase-cards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "metabase-collections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "metabase-dashboards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "metabase-databases-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "metabase-datasets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "metabase-permissions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "metabase-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "metabase-sessions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "metabase-settings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "metabase-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

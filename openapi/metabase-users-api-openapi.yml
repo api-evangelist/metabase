@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Metabase Cards Users API
+  title: Metabase Users API
   description: The Metabase API provides programmatic access to Metabase, an open source business intelligence and analytics platform. It allows developers to manage dashboards, questions (cards), collections, databases, users, permissions, and to execute queries against connected data sources.
   version: '1.0'
   contact:
@@ -33,6 +33,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/User'
+      operationId: getUser
+      x-operation-id-source: derived
     post:
       tags:
       - Users
@@ -46,6 +48,8 @@ paths:
       responses:
         '200':
           description: User created.
+      operationId: postUser
+      x-operation-id-source: derived
   /user/{id}:
     get:
       tags:
@@ -60,6 +64,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
+      operationId: getUserById
+      x-operation-id-source: derived
 components:
   parameters:
     IdParam:
@@ -69,22 +75,6 @@ components:
       schema:
         type: integer
   schemas:
-    User:
-      type: object
-      properties:
-        id:
-          type: integer
-        email:
-          type: string
-          format: email
-        first_name:
-          type: string
-        last_name:
-          type: string
-        is_superuser:
-          type: boolean
-        is_active:
-          type: boolean
     UserInput:
       type: object
       required:
@@ -102,6 +92,22 @@ components:
         password:
           type: string
           format: password
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+          format: email
+        first_name:
+          type: string
+        last_name:
+          type: string
+        is_superuser:
+          type: boolean
+        is_active:
+          type: boolean
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

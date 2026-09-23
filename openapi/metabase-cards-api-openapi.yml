@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Metabase Cards API
   description: The Metabase API provides programmatic access to Metabase, an open source business intelligence and analytics platform. It allows developers to manage dashboards, questions (cards), collections, databases, users, permissions, and to execute queries against connected data sources.
@@ -33,6 +33,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Card'
+      operationId: getCard
+      x-operation-id-source: derived
     post:
       tags:
       - Cards
@@ -50,6 +52,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Card'
+      operationId: postCard
+      x-operation-id-source: derived
   /card/{id}:
     get:
       tags:
@@ -64,6 +68,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Card'
+      operationId: getCardById
+      x-operation-id-source: derived
   /card/{id}/query:
     post:
       tags:
@@ -74,6 +80,8 @@ paths:
       responses:
         '200':
           description: Query result.
+      operationId: postCardByIdQuery
+      x-operation-id-source: derived
 components:
   parameters:
     IdParam:
@@ -83,6 +91,25 @@ components:
       schema:
         type: integer
   schemas:
+    Card:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        database_id:
+          type: integer
+        collection_id:
+          type:
+          - integer
+          - 'null'
+        dataset_query:
+          type: object
+        display:
+          type: string
     CardInput:
       type: object
       required:
@@ -100,26 +127,9 @@ components:
         visualization_settings:
           type: object
         collection_id:
-          type: integer
-          nullable: true
-    Card:
-      type: object
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-        description:
-          type: string
-        database_id:
-          type: integer
-        collection_id:
-          type: integer
-          nullable: true
-        dataset_query:
-          type: object
-        display:
-          type: string
+          type:
+          - integer
+          - 'null'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
