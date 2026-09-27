@@ -5,16 +5,21 @@ description: >-
   interactive dashboards, and ask questions about their data without writing SQL.
 type: Index
 deliveryModel:
-  model: saas
-  open_source: false
+  model: unknown
+  license_evidence:
+    repo: metabase/metabase
+    spdx: NOASSERTION
+    stars: 49419
+  open_source: unknown
   commercial: true
   callable_host: false
-  label: Hosted service · you call their endpoint
-  confidence: medium
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
   source:
   - openapi
   - pricing
-  generated: '2026-08-28'
+  - repository-unlicensed
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -37,7 +42,7 @@ tags:
   - Business Intelligence
   - Dashboards
   - Data Visualization
-  - Open-Source
+  - Open Source
   - SQL
 tags_raw:
   - Metabase
@@ -47,6 +52,7 @@ tags_raw:
   - Data Visualization
   - Open Source
   - SQL
+  - Open-Source
 url: https://raw.githubusercontent.com/api-evangelist/metabase/refs/heads/main/apis.yml
 created: '2026-03-26'
 modified: '2026-05-19'

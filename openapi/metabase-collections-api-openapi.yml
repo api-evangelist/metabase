@@ -71,27 +71,7 @@ paths:
       operationId: getCollectionById
       x-operation-id-source: derived
 components:
-  parameters:
-    IdParam:
-      in: path
-      name: id
-      required: true
-      schema:
-        type: integer
   schemas:
-    CollectionInput:
-      type: object
-      required:
-      - name
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        parent_id:
-          type:
-          - integer
-          - 'null'
     Collection:
       type: object
       properties:
@@ -109,6 +89,26 @@ components:
           - 'null'
         archived:
           type: boolean
+    CollectionInput:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        parent_id:
+          type:
+          - integer
+          - 'null'
+  parameters:
+    IdParam:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: integer
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

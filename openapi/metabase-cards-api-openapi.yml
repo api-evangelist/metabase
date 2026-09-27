@@ -83,33 +83,7 @@ paths:
       operationId: postCardByIdQuery
       x-operation-id-source: derived
 components:
-  parameters:
-    IdParam:
-      in: path
-      name: id
-      required: true
-      schema:
-        type: integer
   schemas:
-    Card:
-      type: object
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-        description:
-          type: string
-        database_id:
-          type: integer
-        collection_id:
-          type:
-          - integer
-          - 'null'
-        dataset_query:
-          type: object
-        display:
-          type: string
     CardInput:
       type: object
       required:
@@ -130,6 +104,32 @@ components:
           type:
           - integer
           - 'null'
+    Card:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        database_id:
+          type: integer
+        collection_id:
+          type:
+          - integer
+          - 'null'
+        dataset_query:
+          type: object
+        display:
+          type: string
+  parameters:
+    IdParam:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: integer
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
