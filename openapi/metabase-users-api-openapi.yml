@@ -67,13 +67,6 @@ paths:
       operationId: getUserById
       x-operation-id-source: derived
 components:
-  parameters:
-    IdParam:
-      in: path
-      name: id
-      required: true
-      schema:
-        type: integer
   schemas:
     UserInput:
       type: object
@@ -108,6 +101,13 @@ components:
           type: boolean
         is_active:
           type: boolean
+  parameters:
+    IdParam:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: integer
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

@@ -71,6 +71,13 @@ paths:
       operationId: getDatabaseById
       x-operation-id-source: derived
 components:
+  parameters:
+    IdParam:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: integer
   schemas:
     DatabaseInput:
       type: object
@@ -102,13 +109,6 @@ components:
         created_at:
           type: string
           format: date-time
-  parameters:
-    IdParam:
-      in: path
-      name: id
-      required: true
-      schema:
-        type: integer
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
