@@ -1,0 +1,61 @@
+slug: metabase
+provider: Metabase
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: Cards
+  spec_file: metabase-cards-api-openapi.yml
+  capability_id: BC-610.50
+  capability_id_l1: BC-610
+  capability_name: Analytics & BI Management
+  confidence: 0.9
+  evidence: GET /card 'List saved questions (cards)'; POST /card/{id}/query 'Execute a card's query'
+  reason: Cards are Metabase's saved analytical questions; the operations create, list and execute reporting
+    queries against connected data. This is squarely Analytics & BI delivery.
+- tag: Dashboards
+  spec_file: metabase-dashboards-api-openapi.yml
+  capability_id: BC-610.50
+  capability_id_l1: BC-610
+  capability_name: Analytics & BI Management
+  confidence: 0.9
+  evidence: GET /dashboard 'List dashboards'; POST /dashboard 'Create a dashboard'; schema Dashboard
+  reason: Full lifecycle management of analytical dashboards in a business intelligence platform — the
+    definitional case of reporting and BI delivery.
+- tag: Datasets
+  spec_file: metabase-datasets-api-openapi.yml
+  capability_id: BC-610.50
+  capability_id_l1: BC-610
+  capability_name: Analytics & BI Management
+  confidence: 0.85
+  evidence: POST /dataset 'Execute an ad-hoc query'
+  reason: Ad-hoc query execution against connected data sources is the core self-service analytics function
+    of this BI platform.
+- tag: Collections
+  spec_file: metabase-collections-api-openapi.yml
+  capability_id: BC-610.50
+  capability_id_l1: BC-610
+  capability_name: Analytics & BI Management
+  confidence: 0.75
+  evidence: GET /collection 'List collections'; POST /collection 'Create a collection'; schema Collection
+  reason: Collections organise BI artefacts (dashboards and saved questions) inside the analytics platform.
+    It is content organisation in service of Analytics & BI Management, though the operations themselves
+    are generic container CRUD, so confidence is tempered.
+- tag: Databases
+  spec_file: metabase-databases-api-openapi.yml
+  capability_id: BC-610.50
+  capability_id_l1: BC-610
+  capability_name: Analytics & BI Management
+  confidence: 0.7
+  evidence: POST /database 'Add a database connection'; schemas DatabaseInput, Database
+  reason: Registering and listing data source connections that the BI platform queries. It supports analytics
+    delivery rather than defining enterprise data architecture, so BC-610.50 at moderate confidence.

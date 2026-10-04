@@ -235,6 +235,9 @@ apis:
   - type: GitHubOrg
     url: https://github.com/metabase/metabase
 common:
+  - type: CapabilityMap
+    url: capabilities/metabase-capability-edges.yml
+    name: Metabase Business Capability Map
   - type: AgenticAccess
     url: agentic-access/metabase-agentic-access.yml
   - type: TrustCenter
