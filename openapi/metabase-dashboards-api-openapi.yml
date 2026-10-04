@@ -99,14 +99,20 @@ paths:
       operationId: deleteDashboardById
       x-operation-id-source: derived
 components:
-  parameters:
-    IdParam:
-      in: path
-      name: id
-      required: true
-      schema:
-        type: integer
   schemas:
+    DashboardInput:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        collection_id:
+          type:
+          - integer
+          - 'null'
     Dashboard:
       type: object
       properties:
@@ -128,19 +134,13 @@ components:
         updated_at:
           type: string
           format: date-time
-    DashboardInput:
-      type: object
-      required:
-      - name
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        collection_id:
-          type:
-          - integer
-          - 'null'
+  parameters:
+    IdParam:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: integer
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
