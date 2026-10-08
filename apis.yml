@@ -235,6 +235,12 @@ apis:
   - type: GitHubOrg
     url: https://github.com/metabase/metabase
 common:
+  - type: Plans
+    url: plans/metabase-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/metabase-rate-limits.yml
+  - type: FinOps
+    url: finops/metabase-finops.yml
   - type: CapabilityMap
     url: capabilities/metabase-capability-edges.yml
     name: Metabase Business Capability Map
