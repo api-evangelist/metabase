@@ -71,6 +71,13 @@ paths:
       operationId: getCollectionById
       x-operation-id-source: derived
 components:
+  parameters:
+    IdParam:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: integer
   schemas:
     CollectionInput:
       type: object
@@ -102,13 +109,6 @@ components:
           - 'null'
         archived:
           type: boolean
-  parameters:
-    IdParam:
-      in: path
-      name: id
-      required: true
-      schema:
-        type: integer
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
