@@ -116,6 +116,87 @@ edges:
     builder: 'community (Meltano Hub variant maintainers: airbyte)'
   detected_by: sweep-data-integration.py
   first_seen: '2026-10-18'
+- partner_name: 'Firebolt Analytics '
+  app: Firebolt driver
+  partner: firebolt
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://github.com/firebolt-db/metabase-firebolt-driver
+  category: database driver
+  contract_reference:
+    register: Metabase community drivers (metabase/metabase docs/developers-guide/community-drivers.md)
+    spec_file: null
+    role: metabase-app
+    registered_name: 'Firebolt Analytics '
+    matched_domain: firebolt.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Firebolt driver
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-bi-analytics.py
+    detected: '2026-10-19'
+    identity_source: GitHub org firebolt-db declared website https://www.firebolt.io (labelled identity step)
+  detected_by: sweep-bi-analytics.py
+  detected: '2026-10-19'
+- partner_name: Materialize, Inc.
+  app: Materialize driver
+  partner: materialize
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://github.com/MaterializeInc/metabase-materialize-driver
+  category: database driver
+  contract_reference:
+    register: Metabase community drivers (metabase/metabase docs/developers-guide/community-drivers.md)
+    spec_file: null
+    role: metabase-app
+    registered_name: Materialize, Inc.
+    matched_domain: materialize.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Materialize driver
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-bi-analytics.py
+    detected: '2026-10-19'
+    identity_source: GitHub org MaterializeInc declared website https://materialize.com (labelled identity step)
+  detected_by: sweep-bi-analytics.py
+  detected: '2026-10-19'
+- partner_name: MotherDuck
+  app: DuckDB driver
+  partner: motherduck
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://github.com/motherduckdb/metabase_duckdb_driver
+  category: database driver
+  contract_reference:
+    register: Metabase community drivers (metabase/metabase docs/developers-guide/community-drivers.md)
+    spec_file: null
+    role: metabase-app
+    registered_name: MotherDuck
+    matched_domain: motherduck.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - DuckDB driver
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-bi-analytics.py
+    detected: '2026-10-19'
+    identity_source: GitHub org motherduckdb declared website https://motherduck.com (labelled identity step)
+  detected_by: sweep-bi-analytics.py
+  detected: '2026-10-19'
 generated: '2026-10-15'
 method: searched
 source:
@@ -129,3 +210,12 @@ checked:
 - https://github.com/lfai/landscape
 - https://github.com/meltano/hub
 - https://github.com/mlcommons
+- https://www.metabase.com/docs/latest/developers-guide/community-drivers
+marketplace_apps:
+- marketplace: own
+  channel: partner-built
+  app: metabase
+  url: https://www.metabase.com/docs/latest/developers-guide/community-drivers
+  adapter: sweep-bi-analytics.py:metabase
+  listed: 3
+  note: 'Metabase community drivers: only domain-linked third-party builders are written; platform-built skipped'
