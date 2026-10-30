@@ -1,4 +1,4 @@
-# Metabase (metabase)
+# Metabase
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,67 +66,136 @@
 
 Metabase is an open source business intelligence and analytics platform that enables teams to explore data, build interactive dashboards, and ask questions about their data without writing SQL.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/metabase/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/metabase/refs/heads/main/apis.yml)
+**Areas:** Metabase · Analytics · Business Intelligence · Dashboards · Data Visualization · Open Source · SQL
 
-## Scope
+## Metabase on APIs.io
 
-- **Type:** Index
+Everything profiled for Metabase is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/metabase/](https://apis.io/providers/metabase/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (10)
 
-- Analytics
-- Business Intelligence
-- Dashboards
-- Data Visualization
-- Open Source
-- SQL
+- [Metabase Cards API](https://apis.io/apis/metabase/metabase-cards-api/) — Saved questions used to power dashboards and embedded analytics.
+- [Metabase Collections API](https://apis.io/apis/metabase/metabase-collections-api/) — Organize dashboards, questions, and pulses.
+- [Metabase Dashboards API](https://apis.io/apis/metabase/metabase-dashboards-api/) — Build and manage interactive dashboards.
+- [Metabase Databases API](https://apis.io/apis/metabase/metabase-databases-api/) — Manage data source connections and metadata.
+- [Metabase Datasets API](https://apis.io/apis/metabase/metabase-datasets-api/) — Execute ad-hoc queries against connected databases.
+- [Metabase Permissions API](https://apis.io/apis/metabase/metabase-permissions-api/) — Group and permission management.
+- [Metabase Search API](https://apis.io/apis/metabase/metabase-search-api/) — Search across cards, dashboards, collections, and more.
+- [Metabase Sessions API](https://apis.io/apis/metabase/metabase-sessions-api/) — Authentication and session management.
+- [Metabase Settings API](https://apis.io/apis/metabase/metabase-settings-api/) — Global application settings.
+- [Metabase Users API](https://apis.io/apis/metabase/metabase-users-api/) — User account management.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-26
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Metabase API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Metabase API provides programmatic access to dashboards, questions, databases, collections, and user management, enabling developers to embed analytics, automate queries, and integrate Metabase into applications.
+- [Metabase Agentic Access](https://apis.io/agentic-access/metabase/metabase-agentic-access/)
 
-- **Human URL:** [https://www.metabase.com](https://www.metabase.com)
+#### Collections (11)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Analytics API
-- Business Intelligence
-- Dashboards
-- Open Source
+- [Metabase API](https://apis.io/collections/metabase/open-metabase/)
+- [Metabase Cards API](https://apis.io/collections/metabase/open-metabase-cards-api/)
+- [Metabase Cards Collections API](https://apis.io/collections/metabase/open-metabase-collections-api/)
+- [Metabase Cards Dashboards API](https://apis.io/collections/metabase/open-metabase-dashboards-api/)
+- [Metabase Cards Databases API](https://apis.io/collections/metabase/open-metabase-databases-api/)
+- [Metabase Cards Datasets API](https://apis.io/collections/metabase/open-metabase-datasets-api/)
+- [Metabase Cards Permissions API](https://apis.io/collections/metabase/open-metabase-permissions-api/)
+- [Metabase Cards Search API](https://apis.io/collections/metabase/open-metabase-search-api/)
+- [Metabase Cards Sessions API](https://apis.io/collections/metabase/open-metabase-sessions-api/)
+- [Metabase Cards Settings API](https://apis.io/collections/metabase/open-metabase-settings-api/)
+- [Metabase Cards Users API](https://apis.io/collections/metabase/open-metabase-users-api/)
 
-#### Properties
+#### Security (3)
 
-- [Documentation](https://www.metabase.com/docs/latest)
-- [A P I Documentation](https://www.metabase.com/docs/latest/api-documentation)
-- [Getting Started](https://www.metabase.com/docs/latest/getting-started)
-- [Git Hub Org](https://github.com/metabase/metabase)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/metabase/refs/heads/main/openapi/metabase-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/metabase.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/metabase.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Metabase Authentication](https://apis.io/security/metabase/metabase-authentication/)
+- [Metabase Domain Security](https://apis.io/security/metabase/metabase-domain-security/)
+- [Metabase Trust Center](https://apis.io/security/metabase/metabase-trust-center/)
 
-- [LinkedIn](https://www.linkedin.com/company/metabase)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Metabase Plans Pricing](https://apis.io/plans/metabase/metabase-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Metabase Rate Limits](https://apis.io/rate-limits/metabase/metabase-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Metabase Finops](https://apis.io/finops/metabase/metabase-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.metabase.com)
 - [Documentation](https://www.metabase.com/docs/latest)
-- [Blog](https://www.metabase.com/blog)
 - [Pricing](https://www.metabase.com/pricing)
-- [Git Hub](https://github.com/metabase/metabase)
-- [Login](https://store.metabase.com/login)
-- [Sign Up](https://www.metabase.com/start)
 - [Support](https://www.metabase.com/help)
-- [Self Hosting](https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase)
-- [Community](https://discourse.metabase.com)
-- [Integrations](https://www.metabase.com/partners/)
+- [Blog](https://www.metabase.com/blog)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 32.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 43.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 47.6 |
+| Access clarity | 32.9 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/metabase/](https://apis.io/providers/metabase/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Metabase: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/metabase/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
